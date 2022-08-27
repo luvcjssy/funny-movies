@@ -11,7 +11,7 @@
   <nav class="my-2 my-md-0 mr-md-3">
     <% if logged_in? %>
       <span class="navbar-text">Welcome <%= current_user.username %></span>
-      <a href="" class="btn btn-outline-success">Share a video</a>
+      <%= link_to 'Share a video', new_video_path, class: 'btn btn-outline-success' %>
       <%= link_to 'Logout', logout_path, class: 'btn btn-outline-danger', method: :delete %>
     <% else %>
       <%= form_with url: authenticate_path, class: 'form-inline my-2 my-lg-0', local: true do |f| %>

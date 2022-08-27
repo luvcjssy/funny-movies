@@ -1,0 +1,14 @@
+fieldset {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+legend {
+  width: 300px;
+  padding: 10px 20px;
+}
+
+.h-14.em {
+  height: 10em;
+}
