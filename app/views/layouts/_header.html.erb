@@ -9,12 +9,16 @@
   <% end %>
 
   <nav class="my-2 my-md-0 mr-md-3">
-    <form class="form-inline my-2 my-lg-0">
-      <input type="text" class="form-control mr-sm-2" placeholder="Username">
-      <input type="password" class="form-control mr-sm-2" placeholder="Password">
-      <button type="submit" class="btn btn-outline-primary my-2 my-sm-0">Login / Register</button>
-    </form>
-    <a href="" class="btn btn-outline-success">Share a video</a>
-    <a href="" class="btn btn-outline-danger">Logout</a>
+    <% if logged_in? %>
+      <span class="navbar-text">Welcome <%= current_user.username %></span>
+      <a href="" class="btn btn-outline-success">Share a video</a>
+      <%= link_to 'Logout', logout_path, class: 'btn btn-outline-danger', method: :delete %>
+    <% else %>
+      <%= form_with url: authenticate_path, class: 'form-inline my-2 my-lg-0', local: true do |f| %>
+        <%= f.text_field :username, class: 'form-control mr-sm-2', placeholder: 'Username' %>
+        <%= f.password_field :password, class: 'form-control mr-sm-2', placeholder: 'Password' %>
+        <%= f.submit 'Login / Register', class: 'btn btn-outline-primary my-2 my-sm-0' %>
+      <% end %>
+    <% end %>
   </nav>
 </div>

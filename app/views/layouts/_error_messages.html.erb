@@ -1,0 +1,13 @@
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, class: [:alert, alert_for(name)] do %>
+    <ul>
+      <% if msg.is_a? Array %>
+        <% msg.each do |m| %>
+          <%= content_tag :li, m %>
+        <% end %>
+      <% else %>
+        <%= content_tag :li, msg %>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
