@@ -1,24 +1,48 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Github
+- Ruby 2.7.1
+- Rails 6.0.5
 
-* Ruby version
+##### 1. Clone the repository
 
-* System dependencies
+```bash
+git clone git@github.com:luvcjssy/funny-movies.git
+```
 
-* Configuration
+##### 2. Go to project directory
 
-* Database creation
+```bash
+cd <path_to_project>
+```
 
-* Database initialization
+##### 3. Install gem
+```bash
+bundle install
+```
 
-* How to run the test suite
+##### 4. Install libs
+```bash
+yarn install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+##### 5. Create and setup the database
 
-* Deployment instructions
+Run the following commands to create and setup the database.
 
-* ...
+```ruby
+bundle exec rake db:create
+bundle exec rake db:migrate
+```
+
+##### 6. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+bundle exec rails s
+```
+
+And now you can visit the site with the URL http://localhost:3000
