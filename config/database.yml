@@ -13,6 +13,7 @@ test:
 
 production:
   <<: *default
-  database: funny_movies_production
-  username: funny_movies
-  password: <%= ENV['FUNNY_MOVIES_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
